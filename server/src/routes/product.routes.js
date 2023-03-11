@@ -3,6 +3,7 @@ const {
   getProducts,
   getLatestProducts,
   getProductById,
+  reviewProduct,
   postProduct,
   deleteProduct,
   putProduct,
@@ -12,6 +13,7 @@ const router = express.Router();
 
 router.get("/", getProducts);
 router.get("/latest", getLatestProducts);
+router.post("/review/:id", reviewProduct);
 router.get("/:id", getProductById);
 router.post("/", postProduct);
 router.delete("/:id", deleteProduct);

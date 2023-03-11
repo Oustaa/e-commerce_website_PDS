@@ -10,7 +10,7 @@ const productSchema = {
   QandA: { type: [Object], require: true, default: [] },
   views: { type: Number, default: 0 },
   visits: { type: Number, default: 0 },
-  reviews: {
+  reviewsOverview: {
     type: Object,
     default: {
       one: 0,
@@ -20,8 +20,9 @@ const productSchema = {
       five: 0,
     },
   },
-  gategory_id: { type: Number, require: true },
+  reviews: { type: Object, default: [] },
   extra_images: [String],
+  category_id: { type: Number, require: true },
   store_id: { type: Number, default: 5 },
   inserted_at: { type: Date, default: Date.now() },
 };
