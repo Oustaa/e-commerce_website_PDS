@@ -1,4 +1,5 @@
 const express = require("express");
+const { authanticateUser } = require("../middlewares/authanticate");
 const {
   getProducts,
   getLatestProducts,
@@ -13,7 +14,7 @@ const router = express.Router();
 
 router.get("/", getProducts);
 router.get("/latest", getLatestProducts);
-router.post("/review/:id", reviewProduct);
+router.post("/review/:id", authanticateUser, reviewProduct);
 router.get("/:id", getProductById);
 router.post("/", postProduct);
 router.delete("/:id", deleteProduct);

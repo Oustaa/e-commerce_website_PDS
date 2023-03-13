@@ -32,9 +32,10 @@ async function getProductsByCategory(req, res) {
 }
 
 async function reviewProduct(req, res) {
-  const { user_id, message, body, review } = req.body;
+  const { message, body, review } = req.body;
   const { id } = req.params;
-  console.log(review);
+  const user_id = req.user.id;
+
   const updatedProduct = await Product.updateOne(
     { _id: id },
     {
